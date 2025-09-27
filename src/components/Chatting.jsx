@@ -149,7 +149,7 @@ function Home() {
             return (
               <div
                 key={msg.id}
-                className={`p-2 my-1 rounded relative ${
+                className={`text-start p-2 my-1 rounded relative ${
                   msg.sender === user?.email
                     ? "bg-blue-200 text-right"
                     : "bg-gray-300 text-left"
