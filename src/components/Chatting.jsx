@@ -13,6 +13,7 @@ import {
   setDoc,
   deleteDoc,
 } from "firebase/firestore";
+import Logout from "./Logout";
 
 function Home() {
   const [user, setUser] = useState(null);
@@ -113,10 +114,20 @@ function Home() {
     }
   };
 
+
+
+
+  // Data Print
+
+
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
       {/* 🔝 Fixed Header */}
       <div className="fixed top-0 w-full bg-white shadow-md z-50 p-4">
+        <div className="flex justify-between m-[10px]">
+          <h1 className="text-[25px] font-bold text-green-600">Ib ChatWeb</h1>
+        <Logout />
+        </div>
         <h1 className="text-lg font-bold text-center mb-2">
           Your Email: <span className="text-blue-600">{user?.email}</span>
         </h1>
@@ -138,7 +149,7 @@ function Home() {
       </div>
 
       {/* 💬 Messages Section */}
-      <div className="flex-1 overflow-y-auto max-w-md mx-auto mt-[140px] mb-4 border p-2 bg-white rounded">
+      <div className="flex-1 overflow-y-auto max-w-md mx-auto mb-[70px] mt-[180px] border p-2 bg-white rounded">
         {chatId ? (
           messages.map((msg) => {
             // Format date/time
@@ -183,24 +194,30 @@ function Home() {
         )}
       </div>
 
-      {/* ✍️ Input */}
-      {chatId && (
-        <form onSubmit={sendMessage} className="flex max-w-md mx-auto mb-4">
-          <input
-            type="text"
-            placeholder="Type a message..."
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            className="flex-1 p-2 border rounded-l"
-          />
-          <button
-            type="submit"
-            className="bg-blue-500 text-white px-4 rounded-r"
-          >
-            Send
-          </button>
-        </form>
-      )}
+      {/* ✍️ Fixed Input Bottom */}
+{chatId && (
+  <form
+    onSubmit={sendMessage}
+    className="fixed bottom-0 w-full flex justify-center bg-white p-2 shadow"
+  >
+    <div className="flex max-w-md w-full">
+      <input
+        type="text"
+        placeholder="Type a message..."
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+        className="flex-1 p-2 border rounded-l"
+      />
+      <button
+        type="submit"
+        className="bg-blue-500 text-white px-4 rounded-r"
+      >
+        Send
+      </button>
+    </div>
+  </form>
+)}
+
     </div>
   );
 }

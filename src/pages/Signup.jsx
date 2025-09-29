@@ -63,6 +63,7 @@ function Signup() {
   return (
     <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-green-200 to-blue-200">
       <div className="bg-white shadow-lg rounded-xl p-8 w-[350px]">
+        <h1 className="text-[25px] font-bold text-blue-600 text-center">Ib ChatWeb</h1>
         <h1 className="text-center text-2xl font-bold text-green-600">Create Account</h1>
         <p className="text-center text-gray-500 mb-6">Sign up to get started 🚀</p>
 

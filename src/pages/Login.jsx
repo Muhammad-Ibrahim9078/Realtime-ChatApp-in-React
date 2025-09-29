@@ -63,7 +63,8 @@ function Login() {
   return (
     <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-blue-200 to-purple-200">
       <div className="bg-white shadow-lg rounded-xl p-8 w-[350px]">
-        <h1 className="text-center text-2xl font-bold text-blue-600">Welcome Back</h1>
+        <h1 className="text-[25px] font-bold text-green-600 text-center">Ib ChatWeb</h1>
+        {/* <h1 className="text-center text-2xl font-bold text-blue-600">Welcome Back</h1> */}
         <p className="text-center text-gray-500 mb-6">Login to continue 🔑</p>
 
         <input
